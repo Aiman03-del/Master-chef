@@ -71,7 +71,7 @@ const UpdateFood = () => {
       className="update-food-page p-6 min-h-screen bg-white text-black dark:bg-gray-950 dark:text-white"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
     >
       <h1 className="text-4xl font-bold text-center mb-8 text-indigo-700 dark:text-indigo-300">
         Update Food
@@ -80,7 +80,6 @@ const UpdateFood = () => {
         <Spinner />
       ) : (
         <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-          {/* Read-only User Name */}
           <div className="mb-4">
             <label
               htmlFor="username"
@@ -148,7 +147,6 @@ const UpdateFood = () => {
             />
           </div>
 
-          {/* Price */}
           <div className="mb-4">
             <label
               htmlFor="price"
@@ -166,7 +164,6 @@ const UpdateFood = () => {
             />
           </div>
 
-          {/* Image URL */}
           <div className="mb-4">
             <label
               htmlFor="image"
@@ -184,7 +181,6 @@ const UpdateFood = () => {
             />
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="btn btn-primary w-full bg-indigo-600 text-white dark:bg-indigo-500 hover:bg-indigo-700 dark:hover:bg-indigo-400"

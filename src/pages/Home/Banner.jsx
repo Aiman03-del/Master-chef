@@ -139,7 +139,7 @@ const Banner = () => {
                     <Link to={slide.link}>
                       <motion.button className="explore">
                         Explore
-                        <div className="hoverEffect">
+                        <div className="hover-effect">
                           <div />
                         </div>
                       </motion.button>

@@ -6,7 +6,7 @@ const TitleWrapper = ({ title, children }) => {
   return (
     <>
       <Helmet>
-        <title>{title} - FoodApp</title>
+        <title>{title} - Master Chef</title>
       </Helmet>
       {children}
     </>

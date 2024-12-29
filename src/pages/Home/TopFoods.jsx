@@ -85,7 +85,7 @@ const TopFoods = () => {
                   className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <motion.div
-                  className="absolute inset-0 bg-black bg-opacity-80 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 px-4"
+                  className="absolute inset-0 bg-black bg-opacity-80 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 "
                   initial={{ opacity: 0 }}
                   animate={
                     hoveredCard === food._id ? { opacity: 1 } : { opacity: 0 }
@@ -98,8 +98,8 @@ const TopFoods = () => {
                     {food.description}
                   </p>
                   <div className="flex justify-between w-[80%] ">
-                    <p className="text-lg font-bold text-white">
-                      ${food.price.toFixed(2)}
+                    <p className="text-lg font-bold text-white whitespace-nowrap">
+                      Total Sell: {food.purchaseCount}
                     </p>
                     <Link to={`/food/${food._id}`}>
                       <motion.button className="text-sm font-semibold sm:text-base bg-transparent text-white px-4 py-1 border rounded-full hover:bg-white hover:text-black">

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -73,11 +74,27 @@ const PurchaseForm = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <ToastContainer />
-      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+      <motion.h1
+        className="text-2xl md:text-3xl font-bold mb-6 text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         Food Details: {food.name}
-      </h1>
-      <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>
-        <div className="mb-4">
+      </motion.h1>
+      <motion.form
+        className="max-w-lg mx-auto"
+        onSubmit={handleSubmit}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          className="mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <label className="block text-sm font-medium">Food Name</label>
           <input
             type="text"
@@ -85,8 +102,14 @@ const PurchaseForm = () => {
             readOnly
             className="w-full border border-gray-300 px-3 py-2 rounded-md text-white"
           />
-        </div>
-        <div className="mb-4">
+        </motion.div>
+
+        <motion.div
+          className="mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
           <label className="block text-sm font-medium">Price</label>
           <input
             type="text"
@@ -94,8 +117,14 @@ const PurchaseForm = () => {
             readOnly
             className="w-full border border-gray-300 px-3 py-2 rounded-md text-white"
           />
-        </div>
-        <div className="mb-4">
+        </motion.div>
+
+        <motion.div
+          className="mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
           <label className="block text-sm font-medium">Quantity</label>
           <input
             type="number"
@@ -104,8 +133,14 @@ const PurchaseForm = () => {
             onChange={(e) => setQuantity(Number(e.target.value))}
             className="w-full border border-gray-300 px-3 py-2 rounded-md text-white"
           />
-        </div>
-        <div className="mb-4">
+        </motion.div>
+
+        <motion.div
+          className="mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
           <label className="block text-sm font-medium">Total Purchase</label>
           <input
             type="text"
@@ -113,16 +148,22 @@ const PurchaseForm = () => {
             readOnly
             className="w-full border border-gray-300 px-3 py-2 rounded-md text-white"
           />
-        </div>
-        <div className="flex justify-center py-6 text-center">
+        </motion.div>
+
+        <motion.div
+          className="flex justify-center py-6 text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
           <button
             type="submit"
-            className="sparkle-button text-white   w-full sm:w-auto"
+            className="sparkle-button text-white w-full sm:w-auto"
           >
             Purchase
           </button>
-        </div>
-      </form>
+        </motion.div>
+      </motion.form>
     </div>
   );
 };

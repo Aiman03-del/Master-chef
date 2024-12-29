@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import AddFood from "../pages/AddFood/AddFood";
@@ -14,58 +15,90 @@ import NotFound from "../pages/NotFound/NotFound";
 import PurchaseForm from "../pages/Purchase/PurchaseForm";
 import PrivateRoute from "./PrivateRoute";
 
+// Helmet wrapper to dynamically set the page title
+const withHelmet = (Component, title) => {
+  return (
+    <>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
+      <Component />
+    </>
+  );
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "*", element: <NotFound /> },
-      { path: "/all-foods", element: <AllFoods /> },
-      { path: "/food/:id", element: <FoodDetails /> },
-      { path: "/gallery", element: <Gallery /> },
+      { path: "/", element: withHelmet(Home, "Home - Master Chef") },
+      {
+        path: "*",
+        element: withHelmet(NotFound, "404 Not Found - Master Chef"),
+      },
+      {
+        path: "/all-foods",
+        element: withHelmet(AllFoods, "All Foods - Master Chef"),
+      },
+      {
+        path: "/food/:id",
+        element: withHelmet(FoodDetails, "Food Details - Master Chef"),
+      },
+      {
+        path: "/gallery",
+        element: withHelmet(Gallery, "Gallery - Master Chef"),
+      },
       {
         path: "/my-foods",
-        element: (
+        element: withHelmet(
           <PrivateRoute>
             <MyFoods />
-          </PrivateRoute>
+          </PrivateRoute>,
+          "My Foods - Master Chef"
         ),
       },
       {
         path: "/update-food/:id",
-        element: (
+        element: withHelmet(
           <PrivateRoute>
             <UpdateFood />
-          </PrivateRoute>
+          </PrivateRoute>,
+          "Update Food - Master Chef"
         ),
       },
       {
         path: "/add-food",
-        element: (
+        element: withHelmet(
           <PrivateRoute>
             <AddFood />
-          </PrivateRoute>
+          </PrivateRoute>,
+          "Add Food - Master Chef"
         ),
       },
       {
         path: "/my-orders",
-        element: (
+        element: withHelmet(
           <PrivateRoute>
             <MyOrders />
-          </PrivateRoute>
+          </PrivateRoute>,
+          "My Orders - Master Chef"
         ),
       },
       {
         path: "/purchase/:id",
-        element: (
+        element: withHelmet(
           <PrivateRoute>
             <PurchaseForm />
-          </PrivateRoute>
+          </PrivateRoute>,
+          "Purchase - Master Chef"
         ),
       },
-      { path: "/login", element: <Login /> },
-      { path: "/register", element: <Register /> },
+      { path: "/login", element: withHelmet(Login, "Login - Master Chef") },
+      {
+        path: "/register",
+        element: withHelmet(Register, "Register - Master Chef"),
+      },
     ],
   },
 ]);

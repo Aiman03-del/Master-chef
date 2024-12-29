@@ -97,23 +97,25 @@ const TopFoods = () => {
                   <p className="text-sm sm:text-base text-gray-300 mb-4">
                     {food.description}
                   </p>
-                  <div className="flex gap-10 w-[80%] ">
+                  <div className="flex justify-between w-[80%] ">
                     <p className="text-lg font-bold text-white">
                       ${food.price.toFixed(2)}
                     </p>
-                    <motion.button className="text-sm font-semibold sm:text-base bg-transparent text-white  py-1 border rounded-full hover:bg-white hover:text-black">
-                      <motion.span
-                        initial={{ y: 0, opacity: 1 }}
-                        animate={
-                          hoveredCard === food._id
-                            ? { y: [0, 20, -10, 0], opacity: [1, 0, 0.5, 1] }
-                            : { y: 0, opacity: 1 }
-                        }
-                        transition={{ duration: 1, ease: "backInOut" }}
-                      >
-                        Details
-                      </motion.span>
-                    </motion.button>
+                    <Link to={`/food/${food._id}`}>
+                      <motion.button className="text-sm font-semibold sm:text-base bg-transparent text-white px-4 py-1 border rounded-full hover:bg-white hover:text-black">
+                        <motion.span
+                          initial={{ y: 0, opacity: 1 }}
+                          animate={
+                            hoveredCard === food._id
+                              ? { y: [0, 20, -10, 0], opacity: [1, 0, 0.5, 1] }
+                              : { y: 0, opacity: 1 }
+                          }
+                          transition={{ duration: 1, ease: "backInOut" }}
+                        >
+                          Details
+                        </motion.span>
+                      </motion.button>
+                    </Link>
                   </div>
                 </motion.div>
               </motion.div>

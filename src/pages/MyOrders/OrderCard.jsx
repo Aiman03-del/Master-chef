@@ -33,14 +33,15 @@ const OrderCard = ({ order, handleDelete }) => {
         <motion.button
           onClick={() => handleDelete(order._id)}
           className="mt-4 text-red-600  px-4 py-2 rounded-md hover:text-gray-700"
-          whileHover={{ scale: 1.5 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scaleY: 1.05 }}
+          whileTap={{ scaleY: 1 }}
+          transition={{ duration: 1 }}
           data-tooltip-id="delete"
           data-tooltip-content="delete"
         >
           <RiDeleteBinFill className="text-2xl" />
         </motion.button>
-        <Tooltip id="delete" place="right" />
+        <Tooltip id="delete" />
       </div>
     </motion.div>
   );

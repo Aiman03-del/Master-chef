@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import AddFood from "../pages/AddFood/AddFood";
@@ -13,91 +12,119 @@ import UpdateFood from "../pages/MyFoods/UpdateFood";
 import MyOrders from "../pages/MyOrders/MyOrders";
 import NotFound from "../pages/NotFound/NotFound";
 import PurchaseForm from "../pages/Purchase/PurchaseForm";
+import TitleWrapper from "../Title/TitleWrapper";
 import PrivateRoute from "./PrivateRoute";
-
-// Helmet wrapper to dynamically set the page title
-const withHelmet = (Component, title) => {
-  return (
-    <>
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
-      <Component />
-    </>
-  );
-};
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
     children: [
-      { path: "/", element: withHelmet(Home, "Home - Master Chef") },
+      {
+        path: "/",
+        element: (
+          <TitleWrapper title="Home">
+            <Home />
+          </TitleWrapper>
+        ),
+      },
       {
         path: "*",
-        element: withHelmet(NotFound, "404 Not Found - Master Chef"),
+        element: (
+          <TitleWrapper title="Not Found">
+            <NotFound />
+          </TitleWrapper>
+        ),
       },
       {
         path: "/all-foods",
-        element: withHelmet(AllFoods, "All Foods - Master Chef"),
+        element: (
+          <TitleWrapper title="All Foods">
+            <AllFoods />
+          </TitleWrapper>
+        ),
       },
       {
         path: "/food/:id",
-        element: withHelmet(FoodDetails, "Food Details - Master Chef"),
+        element: (
+          <TitleWrapper title="Food Details">
+            <FoodDetails />
+          </TitleWrapper>
+        ),
       },
       {
         path: "/gallery",
-        element: withHelmet(Gallery, "Gallery - Master Chef"),
+        element: (
+          <TitleWrapper title="Gallery">
+            <Gallery />
+          </TitleWrapper>
+        ),
       },
       {
         path: "/my-foods",
-        element: withHelmet(
+        element: (
           <PrivateRoute>
-            <MyFoods />
-          </PrivateRoute>,
-          "My Foods - Master Chef"
+            <TitleWrapper title="My Foods">
+              <MyFoods />
+            </TitleWrapper>
+          </PrivateRoute>
         ),
       },
       {
         path: "/update-food/:id",
-        element: withHelmet(
+        element: (
           <PrivateRoute>
-            <UpdateFood />
-          </PrivateRoute>,
-          "Update Food - Master Chef"
+            <TitleWrapper title="Update Food">
+              <UpdateFood />
+            </TitleWrapper>
+          </PrivateRoute>
         ),
       },
       {
         path: "/add-food",
-        element: withHelmet(
+        element: (
           <PrivateRoute>
-            <AddFood />
-          </PrivateRoute>,
-          "Add Food - Master Chef"
+            <TitleWrapper title="Add Food">
+              <AddFood />
+            </TitleWrapper>
+          </PrivateRoute>
         ),
       },
       {
         path: "/my-orders",
-        element: withHelmet(
+        element: (
           <PrivateRoute>
-            <MyOrders />
-          </PrivateRoute>,
-          "My Orders - Master Chef"
+            <TitleWrapper title="My Orders">
+              <MyOrders />
+            </TitleWrapper>
+          </PrivateRoute>
         ),
       },
       {
         path: "/purchase/:id",
-        element: withHelmet(
+        element: (
           <PrivateRoute>
-            <PurchaseForm />
-          </PrivateRoute>,
-          "Purchase - Master Chef"
+            <TitleWrapper title="Purchase">
+              <PurchaseForm />
+            </TitleWrapper>
+          </PrivateRoute>
         ),
       },
-      { path: "/login", element: withHelmet(Login, "Login - Master Chef") },
+      {
+        path: "/login",
+        element: (
+          <TitleWrapper title="Login">
+            <Login />
+          </TitleWrapper>
+        ),
+      },
       {
         path: "/register",
-        element: withHelmet(Register, "Register - Master Chef"),
+        element: (
+          <TitleWrapper title="Register">
+            <Register />
+          </TitleWrapper>
+        ),
       },
     ],
   },

@@ -1,9 +1,5 @@
 /* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
-import {
-  IoIosArrowDropleftCircle,
-  IoIosArrowDroprightCircle,
-} from "react-icons/io";
 
 const Pagination = ({ currentPage, totalPages, setPage }) => {
   return (
@@ -13,17 +9,6 @@ const Pagination = ({ currentPage, totalPages, setPage }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <motion.button
-        disabled={currentPage === 1}
-        onClick={() => setPage(currentPage - 1)}
-        className="px-4 py-2 mx-1 text-2xl text-orange-500 rounded-md hover:text-blue-700 disabled:text-gray-400"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        title="Previous Page"
-      >
-        <IoIosArrowDropleftCircle />
-      </motion.button>
-
       <motion.div
         className="flex items-center space-x-2 px-4"
         initial="hidden"
@@ -50,17 +35,6 @@ const Pagination = ({ currentPage, totalPages, setPage }) => {
           </motion.button>
         ))}
       </motion.div>
-
-      <motion.button
-        disabled={currentPage === totalPages}
-        onClick={() => setPage(currentPage + 1)}
-        className="px-4 py-2 mx-1 text-2xl text-orange-500 rounded-md hover:text-blue-700 disabled:text-gray-400"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        title="Next Page"
-      >
-        <IoIosArrowDroprightCircle />
-      </motion.button>
     </motion.div>
   );
 };

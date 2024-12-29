@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useAuth } from "../Auth/AuthContext";
 import Spinner from "../shared/Spinner";
-
+import "./FoodDetailsStyle/FoodDetails.css";
 const FoodDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -35,9 +35,9 @@ const FoodDetails = () => {
   };
 
   return (
-    <div className="p-10">
+    <div className="p-5 md:p-10">
       <motion.h2
-        className="text-2xl sm:text-3xl font-bold  mb-3 text-center"
+        className="text-2xl sm:text-3xl font-bold mb-6 text-center"
         initial={{ y: -20 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.3 }}
@@ -45,7 +45,7 @@ const FoodDetails = () => {
         {food.name}
       </motion.h2>
       <motion.div
-        className="flex flex-row place-content-center items-center gap-6 p-6  shadow-xl rounded-lg"
+        className="flex flex-col sm:flex-row justify-center items-center gap-6 p-6 shadow-xl rounded-lg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -54,13 +54,13 @@ const FoodDetails = () => {
         <motion.img
           src={food.image}
           alt={food.name}
-          className="w-[30%] h-72 object-cover rounded-lg"
+          className="w-full sm:w-[30%] h-64 sm:h-72 object-cover rounded-lg"
           initial={{ y: -20 }}
           animate={{ y: 0 }}
           transition={{ type: "spring", stiffness: 120 }}
         />
 
-        <div className="p-4">
+        <div className="p-4 w-full sm:w-[60%]">
           <motion.p
             className="text-sm sm:text-base text-gray-600 mb-4"
             initial={{ opacity: 0 }}
@@ -114,7 +114,7 @@ const FoodDetails = () => {
               disabled={
                 food.quantity === 0 || food.addedBy?.email === user?.email
               }
-              className={`w-full py-2 rounded text-white ${
+              className={`button ${
                 food.quantity > 0 && food.addedBy?.email !== user?.email
                   ? "bg-blue-500 hover:bg-blue-600"
                   : "bg-gray-400 cursor-not-allowed"

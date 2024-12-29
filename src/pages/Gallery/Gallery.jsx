@@ -170,6 +170,7 @@ const Gallery = () => {
           close={() => setLightboxOpen(false)}
           slides={galleryImages.map((img) => ({ src: img.image }))}
           index={currentIndex}
+          toolbar={false}
         />
       )}
     </div>

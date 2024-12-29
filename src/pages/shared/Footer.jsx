@@ -11,7 +11,7 @@ const Footer = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-2xl font-bold">Master Chef</h2>
+          <h2 className="text-3xl font-bold">Master Chef</h2>
         </motion.div>
 
         <motion.div

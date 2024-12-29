@@ -132,7 +132,7 @@ const Register = () => {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-14 text-gray-500"
+            className="absolute top-[55px] -right-[250px] lg:-right-[350px] text-gray-500"
           >
             {showPassword ? <FiEyeOff /> : <FiEye />}
           </button>
@@ -153,7 +153,7 @@ const Register = () => {
           <button
             type="button"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            className="absolute right-3 top-14 text-gray-500"
+            className="absolute top-[55px] -right-[250px] lg:-right-[350px] text-gray-500"
           >
             {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
           </button>

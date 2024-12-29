@@ -106,7 +106,7 @@ const Login = () => {
         />
 
         {!isForgotPassword && (
-          <label className="relative w-full">
+          <label className="relative w-full flex flex-row items-center ">
             <input
               type={showPassword ? "text" : "password"}
               className="input w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -118,7 +118,7 @@ const Login = () => {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-3 text-gray-400"
+              className="absolute top-[16px] -right-[300px] lg:-right-[350px]"
             >
               {showPassword ? <FiEyeOff /> : <FiEye />}
             </button>

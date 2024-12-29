@@ -45,7 +45,7 @@ const MyOrders = () => {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `https://server-sigma-plum.vercel.app/orders/${id}?email=${user.email}`, // ফ্রন্টএন্ড থেকে ইমেইল পাঠানো হচ্ছে
+            `https://server-sigma-plum.vercel.app/orders/${id}?email=${user.email}`,
             {
               method: "DELETE",
             }
@@ -55,7 +55,6 @@ const MyOrders = () => {
             throw new Error("Failed to delete the order.");
           }
 
-          // সফল হলে অর্ডার লিস্ট আপডেট করুন
           const updatedOrders = orders.filter((order) => order._id !== id);
           setOrders(updatedOrders);
 

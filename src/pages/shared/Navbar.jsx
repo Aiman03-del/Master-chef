@@ -15,7 +15,9 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrollDropdownOpen, setIsScrollDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem("darkMode") === "true";
+  });
 
   const themeDropdownRef = useRef(null);
   const profileDropdownRef = useRef(null);
@@ -33,6 +35,7 @@ const Navbar = () => {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
+    localStorage.setItem("darkMode", isDarkMode);
   }, [isDarkMode]);
 
   const handleLogout = () => {

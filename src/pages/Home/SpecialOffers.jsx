@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
-import "./HomeStyles/SpeacialOffers.css";
+import "./HomeStyles/SpecialOffers.css";
 
 const SpecialOffers = () => {
   const { ref, inView } = useInView({
@@ -46,7 +46,7 @@ const SpecialOffers = () => {
                 <button className="orders">
                   {" "}
                   Order Now
-                  <div className="hoverEffect">
+                  <div className="hover-effect">
                     <div />
                   </div>
                 </button>

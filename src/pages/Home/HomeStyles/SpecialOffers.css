@@ -23,7 +23,7 @@
   transform: scale(0.97);
 }
 
-.hoverEffect {
+.hover-effect {
   position: absolute;
   bottom: 0;
   top: 0;
@@ -35,7 +35,7 @@
   z-index: 1;
 }
 
-.hoverEffect div {
+.hover-effect div {
   background: rgb(222, 0, 75);
   background: linear-gradient(
     90deg,
@@ -52,7 +52,7 @@
   opacity: 0.5;
 }
 
-.orders:hover .hoverEffect div {
+.orders:hover .hover-effect div {
   width: 8rem;
   height: 8rem;
 }

@@ -8,7 +8,7 @@ const Spinner = () => {
         className="flex items-center justify-center"
         initial={{ scale: 1 }}
         animate={{ scale: 3 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 1.6 }}
       >
         <div className="spinner">
           <div className="spinnerin" />

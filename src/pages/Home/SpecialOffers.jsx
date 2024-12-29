@@ -74,7 +74,7 @@ const SpecialOffers = () => {
                 <button className="orders">
                   {" "}
                   Order Now
-                  <div className="hoverEffect">
+                  <div className="hover-effect">
                     <div />
                   </div>
                 </button>
@@ -102,7 +102,7 @@ const SpecialOffers = () => {
                 <button className="orders">
                   {" "}
                   Order Now
-                  <div className="hoverEffect">
+                  <div className="hover-effect">
                     <div />
                   </div>
                 </button>

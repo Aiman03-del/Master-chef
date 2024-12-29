@@ -39,7 +39,7 @@ const chefs = [
     id: 3,
     name: "Chef Liam O'Connor",
     expertise: "French Pastries",
-    tagline: "Bringing elegance to every bite.",
+    tagline: "Bringing elegance to every bites.",
     photo:
       "https://media.licdn.com/dms/image/sync/v2/D4D27AQHTsmak77vUqw/articleshare-shrink_800/articleshare-shrink_800/0/1712061721844?e=2147483647&v=beta&t=eyOgvGlx4DBbdMwZkPQhKi2tVkn50fh00yvFmgDxWPQ",
     featuredDish: {

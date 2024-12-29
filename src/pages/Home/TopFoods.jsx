@@ -127,7 +127,7 @@ const TopFoods = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 See All Foods
-                <div className="hoverEffect">
+                <div className="hover-effect">
                   <div />
                 </div>
               </motion.button>

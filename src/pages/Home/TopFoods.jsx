@@ -28,6 +28,7 @@ const TopFoods = () => {
         if (Array.isArray(foods)) {
           const validFoods = foods.filter((food) => {
             const purchaseCount = parseInt(food.purchaseCount, 10);
+
             return !isNaN(purchaseCount);
           });
 
@@ -37,6 +38,7 @@ const TopFoods = () => {
               purchaseCount: parseInt(food.purchaseCount, 10) || 0,
             }))
             .sort((a, b) => b.purchaseCount - a.purchaseCount);
+          console.log(sortedFoods);
 
           setTopFoods(sortedFoods.slice(0, 6));
         } else {
@@ -54,10 +56,10 @@ const TopFoods = () => {
   }, [axiosSecure]);
 
   return (
-    <div className="py-12 text-center  dark:text-white  text-black">
+    <div className="py-12 text-center dark:text-white text-black">
       <motion.h2
         ref={ref}
-        className="text-3xl md:text-4xl font-bold mb-8"
+        className="text-4xl md:text-5xl font-extrabold mb-8 text-primary"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -50 }}
         exit={{ opacity: 0, y: 50 }}
@@ -75,17 +77,17 @@ const TopFoods = () => {
             {topFoods.map((food) => (
               <motion.div
                 key={food._id}
-                className="relative rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800 group "
+                className="relative rounded-lg overflow-hidden shadow-xl bg-white dark:bg-gray-800 group transform transition-all hover:scale-105"
                 onMouseEnter={() => setHoveredCard(food._id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 <motion.img
                   src={food.image}
                   alt={food.name}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <motion.div
-                  className="absolute inset-0 bg-black bg-opacity-80 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 "
+                  className="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   initial={{ opacity: 0 }}
                   animate={
                     hoveredCard === food._id ? { opacity: 1 } : { opacity: 0 }
@@ -97,12 +99,12 @@ const TopFoods = () => {
                   <p className="text-sm sm:text-base text-gray-300 mb-4">
                     {food.description}
                   </p>
-                  <div className="flex justify-between w-[80%] ">
+                  <div className="flex justify-between w-[80%]">
                     <p className="text-lg font-bold text-white whitespace-nowrap">
                       Total Sell: {food.purchaseCount}
                     </p>
                     <Link to={`/food/${food._id}`}>
-                      <motion.button className="text-sm font-semibold sm:text-base bg-transparent text-white px-4 py-1 border rounded-full hover:bg-white hover:text-black">
+                      <motion.button className="text-sm font-semibold sm:text-base bg-transparent text-white px-6 py-2 border rounded-full hover:bg-white hover:text-black transition-all duration-300">
                         <motion.span
                           initial={{ y: 0, opacity: 1 }}
                           animate={

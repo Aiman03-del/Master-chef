@@ -51,10 +51,16 @@ const PurchaseForm = () => {
       .then((response) => {
         if (response.data.success) {
           toast.success("Order placed successfully!");
-          setFood((prevFood) => ({
-            ...prevFood,
-            purchaseCount: (prevFood.purchaseCount || 0) + 1,
-          }));
+
+          setFood((prevFood) => {
+            const updatedFood = {
+              ...prevFood,
+              purchaseCount: (prevFood.purchaseCount || 0) + 1,
+            };
+
+            console.log("Updated Food Data:", updatedFood); // **Log updated food**
+            return updatedFood;
+          });
         }
       })
       .catch((error) => {

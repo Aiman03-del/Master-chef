@@ -34,7 +34,7 @@ const Login = () => {
       });
       const user = { email: email };
       axios
-        .post("https://server-sigma-plum.vercel.app/jwt", user, {
+        .post("https://server-sigma-plum.vercel.app//jwt", user, {
           withCredentials: true,
         })
         .then((res) => {
@@ -57,7 +57,7 @@ const Login = () => {
       });
       const user = { email: email };
       axios
-        .post("https://server-sigma-plum.vercel.app/jwt", user, {
+        .post("https://server-sigma-plum.vercel.app//jwt", user, {
           withCredentials: true,
         })
         .then((res) => {
@@ -91,14 +91,14 @@ const Login = () => {
   };
 
   return (
-    <div className="form-container mx-auto my-10 max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl px-4">
+    <div className=" mx-auto my-10 py-10 px-4 sm:px-8 md:px-12 lg:px-16 max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
       <p className="title text-2xl sm:text-3xl font-semibold text-center mb-6">
         Login
       </p>
-      <form onSubmit={handleSubmit} className="form">
+      <form onSubmit={handleSubmit} className="form w-full flex flex-col gap-4">
         <input
           type="email"
-          className="input w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-black text-white dark:bg-white dark:text-black mx-auto input w-[300px] lg:w-[350px] p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -106,10 +106,10 @@ const Login = () => {
         />
 
         {!isForgotPassword && (
-          <label className="relative w-full flex flex-row items-center ">
+          <label className="relative w-[300px] lg:w-[350px] mx-auto flex flex-row items-center">
             <input
               type={showPassword ? "text" : "password"}
-              className="input w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="bg-black text-white dark:bg-white dark:text-black mx-auto input w-[300px] lg:w-[350px] p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -118,7 +118,7 @@ const Login = () => {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute top-[16px] -right-[300px] lg:-right-[350px]"
+              className="w-8 absolute left-[16rem] lg:left-[20rem]"
             >
               {showPassword ? <FiEyeOff /> : <FiEye />}
             </button>
@@ -126,7 +126,7 @@ const Login = () => {
         )}
 
         {isForgotPassword ? (
-          <div className="forgot-password-form">
+          <div className="w-[300px] lg:w-[350px] mx-auto">
             <p className="text-sm text-center mb-4">
               Enter your email to receive a reset link.
             </p>
@@ -156,7 +156,7 @@ const Login = () => {
             </p>
             <button
               type="submit"
-              className="form-btn w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
+              className="form-btn w-[300px] lg:w-[350px] mx-auto p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
             >
               Log in
             </button>
@@ -172,7 +172,7 @@ const Login = () => {
       <div className="buttons-container mt-6">
         <div
           onClick={handleGoogleLogin}
-          className="google-login-button w-full p-3 border border-gray-300 flex justify-center items-center space-x-2 rounded-md hover:bg-gray-800 hover:text-white transition cursor-pointer"
+          className="w-[300px] lg:w-[350px] mx-auto p-3 border border-gray-300 flex justify-center items-center space-x-2 rounded-md hover:bg-gray-800 hover:text-white transition cursor-pointer"
         >
           <svg
             stroke="currentColor"
@@ -202,7 +202,7 @@ const Login = () => {
               d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571 c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
             />
           </svg>
-          <span>Log in with Google</span>
+          <span>Login with Google</span>
         </div>
       </div>
     </div>

@@ -27,6 +27,7 @@ const FoodDetails = () => {
   }, [id, axiosSecure]);
 
   if (loading) return <Spinner />;
+  console.log(food.addedBy.email);
 
   const handlePurchase = () => {
     if (food.quantity > 0 && food.addedBy?.email !== user?.email) {

@@ -1,12 +1,10 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Auth/AuthContext";
 import "./AddFoodStyles/AddFood.css";
 
 const AddFood = () => {
   const { user } = useAuth();
-  const navigate = useNavigate();
 
   const categories = [
     "Vegetarian",
@@ -75,8 +73,7 @@ const AddFood = () => {
         }
         return response.json();
       })
-      .then((data) => {
-        navigate(`/food/${data._id}`);
+      .then(() => {
         setFoodData({
           name: "",
           image: "",
@@ -92,7 +89,6 @@ const AddFood = () => {
           description: "",
         });
       });
-
     toast.promise(addFoodPromise, {
       loading: "Adding food item...",
       success: "Food item added successfully!",

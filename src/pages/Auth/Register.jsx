@@ -20,7 +20,6 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
     const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passwordValidation.test(password)) {
       toast.error(
@@ -52,7 +51,12 @@ const Register = () => {
       navigate("/all-foods");
     } catch (error) {
       console.error(error);
-      toast.error(error.message || "Registration failed. Please try again.");
+      Swal.fire({
+        icon: "error",
+        title: "Registration failed",
+        text: error.message || "An error occurred. Please try again.",
+        confirmButtonText: "Okay",
+      });
     }
   };
 
@@ -76,7 +80,7 @@ const Register = () => {
           Register
         </motion.p>
 
-        <div className="form-control text-black dark:text-white">
+        <div className="form-control ">
           <label className="label">
             <span>Full Name</span>
           </label>
@@ -86,7 +90,7 @@ const Register = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter your full name"
-            className="input input-bordered input-primary "
+            className="input bg-black text-white dark:bg-white dark:text-black"
           />
         </div>
 
@@ -100,7 +104,7 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="input input-bordered input-primary"
+            className="input bg-black text-white dark:bg-white dark:text-black"
           />
         </div>
 
@@ -113,7 +117,7 @@ const Register = () => {
             value={photoURL}
             onChange={(e) => setPhotoURL(e.target.value)}
             placeholder="Enter photo URL"
-            className="input input-bordered input-primary"
+            className="input bg-black text-white dark:bg-white dark:text-black"
           />
         </div>
 
@@ -127,12 +131,12 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter your password"
-            className="input input-bordered input-primary"
+            className="input bg-black text-white dark:bg-white dark:text-black"
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute top-[55px] -right-[250px] lg:-right-[350px] text-gray-500"
+            className="w-8 absolute top-14 left-[12.5rem] lg:left-[22rem] text-gray-500"
           >
             {showPassword ? <FiEyeOff /> : <FiEye />}
           </button>
@@ -148,12 +152,12 @@ const Register = () => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Confirm your password"
-            className="input input-bordered input-primary"
+            className="input bg-black text-white dark:bg-white dark:text-black"
           />
           <button
             type="button"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            className="absolute top-[55px] -right-[250px] lg:-right-[350px] text-gray-500"
+            className="w-8 absolute top-14 left-[12.5rem] lg:left-[22rem] text-gray-500"
           >
             {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
           </button>

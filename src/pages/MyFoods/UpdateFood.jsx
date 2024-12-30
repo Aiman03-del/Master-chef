@@ -93,7 +93,7 @@ const UpdateFood = () => {
               name="username"
               value={user?.displayName || "Anonymous"}
               readOnly
-              className="input input-bordered w-full bg-gray-100 text-black dark:bg-gray-800 dark:text-white"
+              className="input input-bordered w-full bg-black text-white dark:bg-white dark:text-black"
             />
           </div>
 
@@ -110,7 +110,7 @@ const UpdateFood = () => {
               name="email"
               value={user?.email || ""}
               readOnly
-              className="input input-bordered w-full bg-gray-100 text-black dark:bg-gray-800 dark:text-white"
+              className="input input-bordered w-full  bg-black text-white dark:bg-white dark:text-black"
             />
           </div>
 
@@ -127,7 +127,7 @@ const UpdateFood = () => {
               name="name"
               value={foodData.name}
               onChange={handleChange}
-              className="input input-bordered w-full bg-gray-100 text-black dark:bg-gray-800 dark:text-white"
+              className="input input-bordered w-full  bg-black text-white dark:bg-white dark:text-black"
             />
           </div>
 
@@ -143,7 +143,7 @@ const UpdateFood = () => {
               name="description"
               value={foodData.description}
               onChange={handleChange}
-              className="textarea textarea-bordered w-full bg-gray-100 text-black dark:bg-gray-800 dark:text-white"
+              className="textarea textarea-bordered w-full  bg-black text-white dark:bg-white dark:text-black"
             />
           </div>
 
@@ -160,7 +160,7 @@ const UpdateFood = () => {
               name="price"
               value={foodData.price}
               onChange={handleChange}
-              className="input input-bordered w-full bg-gray-100 text-black dark:bg-gray-800 dark:text-white"
+              className="input input-bordered w-full  bg-black text-white dark:bg-white dark:text-black"
             />
           </div>
 
@@ -177,7 +177,7 @@ const UpdateFood = () => {
               name="image"
               value={foodData.image}
               onChange={handleChange}
-              className="input input-bordered w-full bg-gray-100 text-black dark:bg-gray-800 dark:text-white"
+              className="input input-bordered w-full bg-black text-white dark:bg-white dark:text-black"
             />
           </div>
 

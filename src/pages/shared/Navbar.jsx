@@ -4,7 +4,7 @@ import { CiDark, CiSun } from "react-icons/ci";
 import { FaHome } from "react-icons/fa";
 import { RiGalleryFill } from "react-icons/ri";
 import { SiIfood } from "react-icons/si";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/chef-hat.png";
 import { AuthContext } from "../Auth/AuthContext";
 import "./SharedStyles/Navbar.css";
@@ -20,6 +20,8 @@ const Navbar = () => {
 
   const themeDropdownRef = useRef(null);
   const profileDropdownRef = useRef(null);
+
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,25 +84,39 @@ const Navbar = () => {
           to="/"
           className="flex items-center text:xl lg:text-3xl font-bold  border-black"
         >
-          {/* <GrRestaurant className="text-3xl lg:text-5xl" /> */}
           <img src={logo} alt="Logo" className="w-10" />
           <span className="whitespace-nowrap">Master Chef</span>
         </Link>
       </div>
       <div className="navbar-center hidden md:flex gap-8">
-        <Link to="/" className="flex items-center gap-1">
+        <Link
+          to="/"
+          className={`flex items-center gap-1 ${
+            location.pathname === "/" ? "text-gray-500 font-bold" : ""
+          }`}
+        >
           <span className="text-xl">
             <FaHome />
           </span>{" "}
           Home
         </Link>
-        <Link to="/all-foods" className="flex items-center gap-1">
+        <Link
+          to="/all-foods"
+          className={`flex items-center gap-1 ${
+            location.pathname === "/all-foods" ? "text-gray-500 font-bold" : ""
+          }`}
+        >
           <span className="text-xl">
             <SiIfood />
           </span>
           All Foods
         </Link>
-        <Link to="/gallery" className="flex items-center gap-1">
+        <Link
+          to="/gallery"
+          className={`flex items-center gap-1 ${
+            location.pathname === "/gallery" ? "text-gray-500 font-bold" : ""
+          }`}
+        >
           <span className="text-xl">
             <RiGalleryFill />
           </span>{" "}
@@ -150,19 +166,29 @@ const Navbar = () => {
                 <div className="absolute right-10 text-gray-200 mt-2 shadow-lg rounded  bg-gray-800 ">
                   <Link
                     to="/"
-                    className=" block lg:hidden px-4 py-2 hover:bg-gray-900  whitespace-nowrap"
+                    className={`block lg:hidden px-4 py-2 hover:bg-gray-900 whitespace-nowrap ${
+                      location.pathname === "/" ? "text-blue-500 font-bold" : ""
+                    }`}
                   >
                     Home
                   </Link>
                   <Link
                     to="/all-food"
-                    className=" block lg:hidden px-4 py-2 hover:bg-gray-900 whitespace-nowrap"
+                    className={`block lg:hidden px-4 py-2 hover:bg-gray-900 whitespace-nowrap ${
+                      location.pathname === "/all-food"
+                        ? "text-blue-500 font-bold"
+                        : ""
+                    }`}
                   >
                     All Food
                   </Link>
                   <Link
                     to="/gallery"
-                    className=" block lg:hidden px-4 py-2 hover:bg-gray-900 whitespace-nowrap"
+                    className={`block lg:hidden px-4 py-2 hover:bg-gray-900 whitespace-nowrap ${
+                      location.pathname === "/gallery"
+                        ? "text-blue-500 font-bold"
+                        : ""
+                    }`}
                   >
                     Gallery
                   </Link>

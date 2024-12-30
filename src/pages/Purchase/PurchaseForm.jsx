@@ -106,7 +106,7 @@ const PurchaseForm = () => {
             type="text"
             value={food.name}
             readOnly
-            className="w-full border bg-black dark:bg-white px-3 py-2 rounded-md text-white dark:text-black font-semibold"
+            className="w-full border input rounded-md font-semibold bg-black text-white dark:bg-white dark:text-black text-lg"
           />
         </motion.div>
 
@@ -121,7 +121,7 @@ const PurchaseForm = () => {
             type="text"
             value={`$${food.price}`}
             readOnly
-            className="w-full border bg-black dark:bg-white px-3 py-2 rounded-md text-white dark:text-black font-semibold"
+            className="w-full border  input rounded-md font-semibold bg-black text-white dark:bg-white dark:text-black text-lg"
           />
         </motion.div>
 
@@ -137,7 +137,7 @@ const PurchaseForm = () => {
             min="1"
             value={quantity}
             onChange={(e) => setQuantity(Number(e.target.value))}
-            className="w-full border bg-black dark:bg-white px-3 py-2 rounded-md text-white dark:text-black font-semibold"
+            className="w-full border  input rounded-md  font-semibold bg-black text-white dark:bg-white dark:text-black text-lg"
           />
         </motion.div>
 
@@ -152,7 +152,7 @@ const PurchaseForm = () => {
             type="text"
             value={food.purchaseCount || 0}
             readOnly
-            className="w-full border bg-black dark:bg-white px-3 py-2 rounded-md text-white dark:text-black font-semibold"
+            className="w-full border  input rounded-md  font-semibold bg-black text-white dark:bg-white dark:text-black text-lg"
           />
         </motion.div>
 

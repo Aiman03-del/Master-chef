@@ -115,7 +115,7 @@ const AddFood = () => {
               value={foodData.name}
               onChange={handleChange}
               required
-              className="text-lg input-field text-white p-4 rounded-lg"
+              className="text-lg input-field bg-black text-white dark:bg-white dark:text-black p-4 rounded-lg"
             />
           </label>
           <label className="flex flex-col">
@@ -126,7 +126,7 @@ const AddFood = () => {
               value={foodData.image}
               onChange={handleChange}
               required
-              className="text-lg input-field text-white p-4 rounded-lg"
+              className="text-lg input-field bg-black text-white dark:bg-white dark:text-black p-4 rounded-lg"
             />
           </label>
           <label className="flex flex-col">
@@ -136,7 +136,7 @@ const AddFood = () => {
               value={foodData.category}
               onChange={handleChange}
               required
-              className="text-lg input-field text-white p-4 rounded-lg"
+              className="text-lg input-field bg-black text-white dark:bg-white dark:text-black p-4 rounded-lg"
             >
               {categories.map((category) => (
                 <option key={category} value={category}>
@@ -154,7 +154,7 @@ const AddFood = () => {
               onChange={handleChange}
               min="1"
               required
-              className="text-lg input-field text-white p-4 rounded-lg"
+              className="text-lg input-field bg-black text-white dark:bg-white dark:text-black p-4 rounded-lg"
             />
           </label>
           <label className="flex flex-col">
@@ -165,7 +165,7 @@ const AddFood = () => {
               value={foodData.price}
               onChange={handleChange}
               required
-              className="text-lg input-field text-white p-4 rounded-lg"
+              className="text-lg input-field bg-black text-white dark:bg-white dark:text-black p-4 rounded-lg"
             />
           </label>
           <label className="flex flex-col">
@@ -175,7 +175,7 @@ const AddFood = () => {
               name="addedBy"
               value={foodData.addedBy.name}
               readOnly
-              className="text-lg input-field text-white p-4 rounded-lg"
+              className="text-lg input-field bg-black text-white dark:bg-white dark:text-black p-4 rounded-lg"
             />
           </label>
           <label className="flex flex-col">
@@ -185,7 +185,7 @@ const AddFood = () => {
               name="email"
               value={foodData.addedBy.email}
               readOnly
-              className="text-lg input-field text-white p-4 rounded-lg"
+              className="text-lg input-field bg-black text-white dark:bg-white dark:text-black p-4 rounded-lg"
             />
           </label>
           <label className="flex flex-col">
@@ -196,7 +196,7 @@ const AddFood = () => {
               value={foodData.origin}
               onChange={handleChange}
               required
-              className="text-lg input-field text-white p-4 rounded-lg"
+              className="text-lg input-field bg-black text-white dark:bg-white dark:text-black p-4 rounded-lg"
             />
           </label>
           <label className="flex flex-col md:col-span-2">
@@ -207,7 +207,7 @@ const AddFood = () => {
               onChange={handleChange}
               rows="5"
               required
-              className="text-lg input-field text-white p-4 rounded-lg"
+              className="text-lg input-field bg-black text-white dark:bg-white dark:text-black p-4 rounded-lg"
             />
           </label>
         </div>

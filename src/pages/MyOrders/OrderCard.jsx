@@ -20,7 +20,7 @@ const OrderCard = ({ order, handleDelete }) => {
           className="w-full h-48 object-cover rounded-md mb-4"
         />
       </div>
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-row items-center ">
         <div>
           <h2 className="text-lg font-semibold">{order.foodName}</h2>
           <p className="text-sm">Price: ${order.price}</p>

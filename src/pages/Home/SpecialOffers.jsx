@@ -24,7 +24,7 @@ const SpecialOffers = () => {
           Special Offers
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <motion.div
             className="p-6 rounded-lg shadow-md bg-gray-100 text-black dark:bg-gray-800 dark:text-white flex flex-col items-center"
             initial={{ opacity: 0, y: 20 }}

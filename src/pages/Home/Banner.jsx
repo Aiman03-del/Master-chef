@@ -64,7 +64,7 @@ const Banner = () => {
         {bannerData.map((slide, index) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="banner min-h-[calc(100vh-8.95vh)] bg-cover bg-center flex items-center justify-center relative dark:bg-gray-950"
+              className="banner min-h-[40vh]  lg:min-h-[calc(100vh-5.95vh)] bg-cover bg-center flex items-center justify-center relative dark:bg-gray-950"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -77,7 +77,7 @@ const Banner = () => {
                   transition={{ duration: 1 }}
                   viewport={{ once: false, amount: 0.5 }}
                 >
-                  <h1 className="text-2xl sm:text-4xl md:text-6xl font-permanentMarker mb-4 whitespace-nowrap">
+                  <h1 className="text-2xl md:text-4xl lg:text-6xl font-permanentMarker mb-4 whitespace-nowrap">
                     {slide.title.split(" ").map((word, wordIndex) => (
                       <motion.span
                         key={wordIndex}

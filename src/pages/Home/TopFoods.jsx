@@ -38,7 +38,6 @@ const TopFoods = () => {
               purchaseCount: parseInt(food.purchaseCount, 10) || 0,
             }))
             .sort((a, b) => b.purchaseCount - a.purchaseCount);
-          console.log(sortedFoods);
 
           setTopFoods(sortedFoods.slice(0, 6));
         } else {

@@ -63,7 +63,14 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
+  const dropdownVariants = {
+    hidden: { opacity: 0, x: 10 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring", stiffness: 300, damping: 10 },
+    },
+  };
   return (
     <motion.nav
       className={`navbar shadow-md px-2 py-3 fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -134,7 +141,13 @@ const Navbar = () => {
             {isDarkMode ? <CiDark /> : <CiSun />}
           </button>
           {isDropdownOpen && (
-            <div className="absolute top-[50px] right-0 text-gray-200 mt-2 shadow-lg rounded  bg-gray-800">
+            <motion.div
+              className="absolute top-[50px] right-0 text-gray-200 mt-2 shadow-lg rounded bg-gray-800 "
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={dropdownVariants}
+            >
               <button
                 onClick={() => setIsDarkMode(false)}
                 className="px-4 py-2 hover:bg-gray-900 whitespace-nowrap"
@@ -147,7 +160,7 @@ const Navbar = () => {
               >
                 Dark Mode
               </button>
-            </div>
+            </motion.div>
           )}
         </div>
         {user ? (
@@ -163,7 +176,13 @@ const Navbar = () => {
                 }}
               />
               {isProfileDropdownOpen && (
-                <div className="absolute right-10 text-gray-200 mt-2 shadow-lg rounded  bg-gray-800 ">
+                <motion.div
+                  className="absolute right-10 text-gray-200 mt-2 shadow-lg rounded bg-gray-800"
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  variants={dropdownVariants}
+                >
                   <Link
                     to="/"
                     className={`block lg:hidden px-4 py-2 hover:bg-gray-900 whitespace-nowrap ${
@@ -173,9 +192,9 @@ const Navbar = () => {
                     Home
                   </Link>
                   <Link
-                    to="/all-food"
+                    to="/all-foods"
                     className={`block lg:hidden px-4 py-2 hover:bg-gray-900 whitespace-nowrap ${
-                      location.pathname === "/all-food"
+                      location.pathname === "/all-foods"
                         ? "text-blue-500 font-bold"
                         : ""
                     }`}
@@ -194,7 +213,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     to="/my-foods"
-                    className="block px-4 py-2 hover:bg-gray-900  whitespace-nowrap"
+                    className="block px-4 py-2 hover:bg-gray-900 whitespace-nowrap"
                   >
                     My Foods
                   </Link>
@@ -216,7 +235,7 @@ const Navbar = () => {
                   >
                     Logout
                   </button>
-                </div>
+                </motion.div>
               )}
             </div>
           </>
